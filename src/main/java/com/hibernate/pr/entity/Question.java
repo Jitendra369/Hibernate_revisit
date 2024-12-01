@@ -20,8 +20,8 @@ public class Question {
     @Column(name = "question")
     private String question;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "answer_id", referencedColumnName = "answer_id")
+    @OneToOne(cascade = CascadeType.PERSIST)  // if question save then answer should be saved
+    @JoinColumn(name = "answer_id", referencedColumnName = "answer_id") // specify the new col name for answer-id , target col-name reference
     private Answer answer;
 
 

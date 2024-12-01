@@ -35,7 +35,7 @@ public class Product {
     )
     private Integer id;
 
-    @Column(name = "prod_nam", nullable = false)
+    @Column(name = "prod_nam", nullable = false, length = 250)
     private String name;
 
     @Column(name = "prod_id", nullable = false)

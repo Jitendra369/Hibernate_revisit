@@ -40,6 +40,7 @@ public class ProductController {
 
     @DeleteMapping("/que/{id}")
     public void deleteQuestion(@PathVariable int id){
+        System.out.println();
         questionService.deleteQuestion(id);
     }
 

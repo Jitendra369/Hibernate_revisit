@@ -1,9 +1,9 @@
 package com.hibernate.pr.controller;
 
-import com.hibernate.pr.entity.Product;
-import com.hibernate.pr.entity.Question;
+import com.hibernate.pr.entity.*;
 import com.hibernate.pr.service.ProductService;
 import com.hibernate.pr.service.QuestionService;
+import com.hibernate.pr.service.WalkingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +15,17 @@ public class ProductController {
 
     private final ProductService productService;
     private final QuestionService questionService;
+    private final WalkingService walkingService;
 
-    @PostMapping("/save")
+
+    @PostMapping("/prod/save")
     public void saveProduct(@RequestBody Product product){
         productService.saveProduct(product);
+    }
+
+    @GetMapping("/prod/{id}")
+    public Product getProduct(@PathVariable int id){
+        return productService.findProduct(id);
     }
 
     @PostMapping("/que/save")
@@ -35,6 +42,23 @@ public class ProductController {
     public void deleteQuestion(@PathVariable int id){
         questionService.deleteQuestion(id);
     }
+
+    @PostMapping("/wal")
+    public void saveWalkingActivity(@RequestBody WalkingActivity walkingActivity){
+        walkingService.saveWalkingActivity(walkingActivity);
+    }
+
+    @PostMapping("/medi")
+    public void saveMeditationActivity(@RequestBody MeditationActivity meditationActivity){
+        walkingService.saveMeditationActivity(meditationActivity);
+    }
+
+    @GetMapping("/act")
+    public Activity getActivity(){
+        return walkingService.getActivity();
+    }
+
+
 
 
 }

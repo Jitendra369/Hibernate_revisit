@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.extern.apachecommons.CommonsLog;
 
 @Entity
 @Getter
@@ -21,7 +20,7 @@ public class Question {
     private String question;
 
     @OneToOne(cascade = CascadeType.PERSIST)  // if question save then answer should be saved
-    @JoinColumn(name = "answer_id", referencedColumnName = "answer_id") // specify the new col name for answer-id , target col-name reference
+//    @JoinColumn(name = "answer_id", referencedColumnName = "answer_id") // specify the new col name for answer-id , target col-name reference
     private Answer answer;
 
 

@@ -1,0 +1,49 @@
+http://localhost:8080/api/core/prod/save
+{
+"id": 1,
+"name": "coconut",
+"createdDate": "2024-12-03T00:50:20.647+00:00",
+"updateDate": "2024-12-03T00:50:20.647+00:00",
+"review": [
+{
+"id": 3,
+"name": "Neetu",
+"comment": "bad oil",
+"product": null
+},
+{
+"id": 1,
+"name": "pooja",
+"comment": "good oil",
+"product": null
+},
+{
+"id": 2,
+"name": "jittu",
+"comment": "dont-know",
+"product": null
+}
+]
+}
+
+http: //localhost:8080/api/core/vehicle/two
+
+Dto for 2-wheeler
+{
+"companyName": "toyato",
+"topSpeed": "112",
+"seats": "4",
+"cost": "2343",
+"dateOfManufacturer": ""
+}
+http: //localhost:8080/api/core/vehicle/four
+
+dto for 4 - wheeler
+{
+"numberOfDoor": "4",
+"numberOfSeat": "7",
+"isRoofPresent": false
+}
+
+Get vehical by Id
+http: //localhost:8080/api/core/vehicle/vehicle/1

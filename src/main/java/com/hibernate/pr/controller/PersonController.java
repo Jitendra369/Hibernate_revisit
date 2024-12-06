@@ -1,6 +1,7 @@
 package com.hibernate.pr.controller;
 
 import com.hibernate.pr.entity.Employee;
+import com.hibernate.pr.entity.Person;
 import com.hibernate.pr.entity.Student;
 import com.hibernate.pr.service.PersonService;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,8 @@ public class PersonController {
         personService.saveStudent(student);
     }
 
-    @PostMapping("emp")
-    public void saveEmployee(Employee employee){
-
+    @PostMapping("/emp")
+    public Person saveEmployee(@RequestBody Employee employee){
+       return personService.savePreson(employee);
     }
 }

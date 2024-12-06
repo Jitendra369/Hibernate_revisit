@@ -55,3 +55,14 @@ http://localhost:8080/api/core/vehicle/gen/1
 "numberOfSeat":"7",
 "isRoofPresent": false
 }
+
+
+POST: save student
+http://localhost:8080/api/core/person/stu
+{
+"name":"mohan",
+"address":"ram school",
+"schoolName":"Boys school ",
+"standard":"10",
+"rollNumber": "32"
+}

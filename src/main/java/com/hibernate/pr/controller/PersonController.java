@@ -5,10 +5,7 @@ import com.hibernate.pr.entity.Person;
 import com.hibernate.pr.entity.Student;
 import com.hibernate.pr.service.PersonService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,5 +22,10 @@ public class PersonController {
     @PostMapping("/emp")
     public Person saveEmployee(@RequestBody Employee employee){
        return personService.savePreson(employee);
+    }
+
+    @GetMapping("/{id}")
+    public Person getPerson(@PathVariable int id){
+        return personService.getPerson(id);
     }
 }

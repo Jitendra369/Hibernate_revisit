@@ -7,6 +7,8 @@ import com.hibernate.pr.repo.PersonRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class PersonService {
@@ -19,5 +21,19 @@ public class PersonService {
 
     public Person savePreson(Employee employee){
         return personRepo.save(employee);
+    }
+
+    public Person getPerson(int id) {
+        Person person = null;
+        Optional<Person> personOptional = personRepo.findById(id);
+        if (personOptional.isPresent()) {
+            person = personOptional.get();
+            if (person instanceof Student) {
+                return (Student) person;
+            } else if (person instanceof Employee) {
+                return (Employee) person;
+            }
+        }
+        return person;
     }
 }

@@ -47,3 +47,11 @@ dto for 4 - wheeler
 
 Get vehical by Id
 http: //localhost:8080/api/core/vehicle/vehicle/1
+
+GET :
+http://localhost:8080/api/core/vehicle/gen/1
+{
+"numberOfDoor":"4",
+"numberOfSeat":"7",
+"isRoofPresent": false
+}
